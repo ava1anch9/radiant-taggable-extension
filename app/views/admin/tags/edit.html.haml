@@ -2,10 +2,8 @@
 
 - render_region :main do |main|
   - main.edit_header do
-    %h1
-      Edit Tag
-    %p
-      The description you enter here will be dropped into the top of the tag page (above the list of tagged items) when there eventually is one.
+    %h1= t('taggable.titles.edit')
+    -#%p= t('taggable.hints.edit')
     
   - main.edit_form do
     - form_for :tag, :url => admin_tag_path(@tag), :html => { :method => "put", :multipart => true } do |form|

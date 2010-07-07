@@ -7,13 +7,13 @@
       %tr
         - render_region :thead do |thead|
           - thead.title_header do
-            %th.tag-title Title
+            %th.tag-title= t('title')
           - thead.description_header do
-            %th.tag-description Description
+            %th.tag-description= t('description')
           - thead.usage_header do
-            %th.tag-usage Usage
+            %th.tag-usage= t('taggable.columns.usage')
           - thead.modify_header do
-            %th.modify{:colspan =>"2"} Modify
+            %th.modify{:colspan =>"2"}= t('modify')
 
     %tbody
       - for tag in @tags 
@@ -32,23 +32,23 @@
               %td.tag-usage
                 - if tag.use_count.to_i > 0
                   = tag.use_count
-                  = pluralize(tag.use_count.to_i, 'item')
+                  -#= pluralize(tag.use_count.to_i, 'item')
                 - else
                   \-
 
             - tbody.modify_cell do
               %td.remove
-                = link_to "remove", admin_tag_url(tag), :method => 'delete'
+                = link_to t('remove'), admin_tag_url(tag), :method => 'delete'
  
 - render_region :bottom do |bottom|
   - bottom.new_button do
     #actions
       %ul
-        %li= link_to image('plus') + " " + "new tag", new_admin_tag_url
-        %li= link_to "tag list", cloud_admin_tags_url, :class => 'minor'
-        %li= link_to "tag cloud", admin_tags_url, :class => 'minor'
+        %li= link_to image('plus') + " " + t('taggable.links.new_tag'), new_admin_tag_url
+        -#%li= link_to t('taggable.links.tag_list'), admin_tags_url, :class => 'minor'
+        %li= link_to t('taggable.links.tag_cloud'), cloud_admin_tags_url, :class => 'minor'
    
-%script{ :type => "text/javascript"}
+-#%script{ :type => "text/javascript"}
   // <! [CDATA[
   new RuledTable('tags')
   //]

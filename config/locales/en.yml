@@ -1,0 +1,19 @@
+---
+en:
+  taggable:
+    columns:
+      usage: 'Usage'
+    hints:
+#      edit: 'The description you enter here will be dropped into the top of the tag page (above the list of tagged items) when there eventually is one.'
+      new: "Tags are usually added while editing pages (or other tagged items). There you can create several tags at once just by typing a list into the 'keywords' field. If you'd like a bit more control than that, you can also create and describe tags one at a time here:"
+    links:
+      new_tag: 'new tag'
+      tag_cloud: 'tag cloud'
+      tag_list: 'tag list'
+      view_as_list: '&larr; view as list'
+    notes:
+      no_labels_found: 'There were no labels found'
+    titles:
+      new: 'New Tag'
+      edit: 'Edit Tag'
+      cloud: 'Tag Cloud'

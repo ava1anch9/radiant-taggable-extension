@@ -20,8 +20,7 @@
             
 - fields_for :page, @page do |fields|
   %p.keywords
-    %label{:for=>"page_keywords"}
-      Tags
+    %label{:for=>"page_keywords"}= t('tags')
     = fields.text_field :keywords, :class => 'textbox'
   %p.title
     %label{:for=>"page_title"}= t('page_title')

@@ -1,12 +1,13 @@
 - include_stylesheet 'admin/tags'
 - url = Radiant::Config['tags.page'] || '/tags'
 
-%h1 Tag cloud
+%h1= t('taggable.titles.cloud')
 
 %p
-  = link_to "&larr; view as list", admin_tags_url
+  = link_to t('taggable.links.view_as_list'), admin_tags_url
 
 %ul.cloud
-  - @tags.each do |tag|
-    %li{:style => "font-size: #{tag.cloud_size.to_f * 2.5}em; opacity: #{tag.cloud_size};"}
-      = link_to tag.title, admin_tag_url(tag)
+  - if @tags
+    - @tags.each do |tag|
+      %li{:style => "font-size: #{tag.cloud_size.to_f * 2.5}em; opacity: #{tag.cloud_size};"}
+        = link_to tag.title, admin_tag_url(tag)
